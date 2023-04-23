@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.view.MotionEvent
 import android.widget.Button
 import android.widget.TextView
 import android.view.View
@@ -63,6 +64,27 @@ class MainActivity : AppCompatActivity(),Runnable, View.OnClickListener, View.On
             }
         }
         return(true)
+    }
+
+    override fun onTouch(view: View, motionEvent: MotionEvent): Boolean {
+        when (view.id) {
+
+            R.id.plusButton -> {
+                when (motionEvent.action) {
+                    MotionEvent.ACTION_DOWN -> {
+                        // 押された時は何もしない
+                    }
+                    MotionEvent.ACTION_UP -> {
+                        handler.removeCallbacks(this)
+                    }
+                }
+            }
+
+            R.id.minusButton -> {
+
+            }
+        }
+        return(false)
     }
 
 private fun countPlus() {
