@@ -1,7 +1,16 @@
 # AndroidCounter
 アンドロイドスタジオでカウンターアプリを作る
-GitHubでレポジトリを作成するときにREADME.mdやライセンスを追加してやると，ローカルで作ったレポジトリをそこへpushするときにエラーが出る．
 
+# Github連携
+#### コミットまでの手順[参考](https://inomacreate.com/androidstudio-git/)
+1. 左上のツールバーから`VCS`を選択し`Enable Version Control Integration...`を選択
+2. タブが開き、プルダウンメニューから`Git`を選択しOKをクリック
+3. 左沿いのツールバーから`commit`を選択後、commitしたいファイルにチェックしcommitボタンをクリック
+4. タブが開くので`commit`をクリック
+5. 
+
+# GitHubでレポジトリを作成するときにREADME.mdやライセンスを追加してやると，ローカルで作ったレポジトリをそこへpushするときにエラーが出る．
+```
 $ git push origin master
 To https://github.com/TRSasasusu/ほげほげ
 ! [rejected]        master -> master (fetch first)
@@ -11,8 +20,9 @@ hint: not have locally. This is usually caused by another repository pushing
 hint: to the same ref. You may want to first integrate the remote changes
 hint: (e.g., 'git pull ...') before pushing again.
 hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+```
 そこで，README.mdやライセンスの差分をローカルに落とすためにpullすると，
-
+```
 $ git pull origin master
 warning: no common commits
 remote: Enumerating objects: 4, done.
@@ -24,12 +34,13 @@ From https://github.com/TRSasasusu/ほげほげ
 * branch            master     -> FETCH_HEAD
 * [new branch]      master     -> origin/master
   fatal: refusing to merge unrelated histories
+ ```
   とこちらもエラーが出てしまう．このエラーを回避してpullするには，
 
-$ git pull --allow-unrelated-histories origin master
+`$ git pull --allow-unrelated-histories origin master`
 としてやれば良い．これであとは
 
-$ git push origin master
+`$ git push origin master`
 でリモートレポジトリにpushできる．
 
 # 変数名.setOnClickListener(this)でエラーが発生する件
