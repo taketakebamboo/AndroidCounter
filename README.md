@@ -31,3 +31,11 @@ $ git pull --allow-unrelated-histories origin master
 
 $ git push origin master
 でリモートレポジトリにpushできる．
+
+# 変数名.setOnClickListener(this)でエラーが発生する件
+クラス全体に掛かるインターフェースを用いる必要がある
+classの行を `class MainActivity : AppCompatActivity(), View.OnClickListener {` に書き換える
+
+# onClickメソッドをoverrideしようとしたときにエラーが発生する件
+onCreateメソッド内で他の関数を上書しようとしていたことが原因
+overrideするときはonCreate関数外で行う用にしよう！
