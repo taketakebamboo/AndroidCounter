@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">CounterApp</string>
+    <string name="initcounttext">＋１ボタンを押すことでカウントを開始できます</string>
+    <string name="minus">－</string>
+    <string name="plus">＋</string>
+    <string name="reset">reset</string>
+</resources>
