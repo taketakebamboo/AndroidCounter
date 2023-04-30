@@ -12,7 +12,7 @@ import android.view.View
 class MainActivity : AppCompatActivity(),Runnable, View.OnClickListener, View.OnLongClickListener, View.OnTouchListener {
     private val handler: Handler = Handler(Looper.getMainLooper())
     private var count: Int = 0
-    private var
+    private var countFlag: Int = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -96,7 +96,15 @@ class MainActivity : AppCompatActivity(),Runnable, View.OnClickListener, View.On
     }
 
     override fun run() {
-        when ()
+        when (countFlag) {
+            1 -> {
+                countPlus()
+            }
+            0 -> {
+                countMinus()
+            }
+        }
+        handler.postDelayed(this,100)
     }
 
     private fun countPlus() {
@@ -105,6 +113,7 @@ class MainActivity : AppCompatActivity(),Runnable, View.OnClickListener, View.On
         val countTxt: TextView = findViewById(R.id.countText)
         countTxt.text = "$count"
         countTxt.textSize = 30f
+        countFlag = 1
     }
 
     private fun countMinus() {
@@ -113,6 +122,7 @@ class MainActivity : AppCompatActivity(),Runnable, View.OnClickListener, View.On
             val countTxt: TextView = findViewById(R.id.countText)
             countTxt.text = "$count"
             countTxt.textSize = 30f
+            countFlag = 0
         }
     }
 
