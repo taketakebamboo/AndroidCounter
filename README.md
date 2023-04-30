@@ -59,9 +59,9 @@ From https://github.com/TRSasasusu/ほげほげ
 classの行を `class MainActivity : AppCompatActivity(), View.OnClickListener {` に書き換える
 
 # onClickメソッドをoverrideしようとしたときにエラーが発生する件
-onCreateメソッド内で他の関数を上書しようとしていたことが原因
-overrideするときはonCreate関数外で行う用にしよう！
+- onCreateメソッド内で他の関数を上書しようとしていたことが原因
+- overrideするときはonCreate関数外で行う用にしよう！
 
 # onLongClickメソッド内の処理について
-onLongClick内のhandler.postDelayedでは何秒後かに起動するかを指定する。
-run内のhandler.postDelayedでは何秒ごとに処理を行うかを指定する。
+- onLongClick内のhandler.postDelayedでは何秒後かに起動するかを指定する。
+- run内のhandler.postDelayedでは何秒ごとに処理を行うかを指定する。
