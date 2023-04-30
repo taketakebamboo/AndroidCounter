@@ -1,6 +1,18 @@
 # AndroidCounter
 アンドロイドスタジオでカウンターアプリを作る
 
+# 理解した事
+Runnableメソッドの実装方法
+classのoverride方法
+Click,LongClick,Touchの実装方法
+Android StudioとGithub連携方法
+handlerの使い方
+classの継承
+
+# 苦戦した点
+runメソッド内のhandlerとLongClickメソッド内のhandlerの違い
+継承が必要なclassの理解
+
 # Github連携
 #### コミットまでの手順[参考](https://inomacreate.com/androidstudio-git/)
 1. 左上のツールバーから`VCS`を選択し`Enable Version Control Integration...`を選択
