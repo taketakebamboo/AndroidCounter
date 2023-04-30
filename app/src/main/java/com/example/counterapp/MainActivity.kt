@@ -12,6 +12,7 @@ import android.view.View
 class MainActivity : AppCompatActivity(),Runnable, View.OnClickListener, View.OnLongClickListener, View.OnTouchListener {
     private val handler: Handler = Handler(Looper.getMainLooper())
     private var count: Int = 0
+    private var
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -31,8 +32,8 @@ class MainActivity : AppCompatActivity(),Runnable, View.OnClickListener, View.On
 
         val resetBtn: Button = findViewById(R.id.resetButton)
         resetBtn.setOnClickListener(this)
-
     }
+
    override fun onClick(view: View){
         when (view.id) {
 
@@ -81,13 +82,24 @@ class MainActivity : AppCompatActivity(),Runnable, View.OnClickListener, View.On
             }
 
             R.id.minusButton -> {
-
+                when (motionEvent.action) {
+                    MotionEvent.ACTION_DOWN -> {
+                        // 押された時は何もしない
+                    }
+                    MotionEvent.ACTION_UP -> {
+                        handler.removeCallbacks(this)
+                    }
+                }
             }
         }
         return(false)
     }
 
-private fun countPlus() {
+    override fun run() {
+        when ()
+    }
+
+    private fun countPlus() {
         count++
 
         val countTxt: TextView = findViewById(R.id.countText)
