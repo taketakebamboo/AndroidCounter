@@ -104,7 +104,8 @@ class MainActivity : AppCompatActivity(),Runnable, View.OnClickListener, View.On
                 countMinus()
             }
         }
-        handler.postDelayed(this,100)
+        handler.postDelayed(this,10)
+
     }
 
     private fun countPlus() {
